@@ -13,6 +13,10 @@ autocomplete_options:
   - -lt
 ui_options:
   libtorrent:
-    - v2
-    - v1
-  subdomain: false
+    options:
+      - v2
+      - v1
+    label: app.libtorrent
+  subdomain:
+    enabled: false
+    label: app.subdomain

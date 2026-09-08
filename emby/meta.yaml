@@ -20,5 +20,7 @@ autocomplete_options:
   - --emby-premiere-key
 ui_options:
   branches:
-    - main
-    - beta
+    options:
+      - main
+      - beta
+    label: app.branch

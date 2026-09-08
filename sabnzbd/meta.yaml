@@ -17,5 +17,7 @@ autocomplete_options:
   - -b
 ui_options:
   branches:
-    - main
-    - beta
+    options:
+      - main
+      - beta
+    label: app.branch

@@ -10,4 +10,6 @@ tier: free
 category: download
 install_mode: local
 ui_options:
-  subdomain: false
+  subdomain:
+    enabled: false
+    label: app.subdomain
