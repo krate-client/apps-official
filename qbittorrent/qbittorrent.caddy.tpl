@@ -1,4 +1,4 @@
-# qBittorrent: strip_prefix + portal auth; Host/XFF forced to loopback; /api/v2 at root via Referer.
+# qBittorrent: strip_prefix + portal auth; Host/X-Real-IP forced to loopback; /api/v2 at root via Referer.
 @app_route_{{ROUTE_TAG}}_slash {
 	path {{BASE}}
 }
@@ -13,7 +13,6 @@ route @app_route_{{ROUTE_TAG}} {
 		flush_interval -1
 		header_up Host 127.0.0.1:{{PORT}}
 		header_up -Origin
-		header_up X-Forwarded-For 127.0.0.1
 		header_up X-Real-IP 127.0.0.1
 		header_up -Accept-Encoding
 		header_down -x-webkit-csp
@@ -30,7 +29,6 @@ route @app_route_{{ROUTE_TAG}}_api_ref {
 		flush_interval -1
 		header_up Host 127.0.0.1:{{PORT}}
 		header_up -Origin
-		header_up X-Forwarded-For 127.0.0.1
 		header_up X-Real-IP 127.0.0.1
 		header_up -Accept-Encoding
 		header_down -x-webkit-csp
