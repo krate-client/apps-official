@@ -15,7 +15,7 @@ install:
     backup_dir: /home/%i/.krate/backups/suggestarr
     data_dir: /home/%i/.config/suggestarr
     install_dir: /opt/%i/suggestarr
-    temp_dir: /home/%i/tmp/suggestarr
+    temp_dir: /home/%i/.tmp/suggestarr
   executable:
     - /opt/%i/suggestarr/.venv/bin/python
 systemd:
@@ -27,14 +27,14 @@ systemd:
     WorkingDirectory: /opt/%i/suggestarr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/suggestarr
+      TMPDIR: /home/%i/.tmp/suggestarr
       PYTHONUNBUFFERED: "1"
     file:
       path: /home/%i/.krate/applications/suggestarr.env
       mode: "0600"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/suggestarr
+      - /bin/mkdir -p /home/%i/.tmp/suggestarr
     start:
       - /opt/%i/suggestarr/.venv/bin/python
       - -m
@@ -59,7 +59,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/suggestarr
-      - /home/%i/tmp/suggestarr
+      - /home/%i/.tmp/suggestarr
       - /home/%i/.krate/backups/suggestarr
       - /home/%i/.krate/applications
       - /opt/%i/suggestarr/.venv
@@ -69,4 +69,4 @@ security:
 version:
   probes:
     - type: file
-      path: "{install_dir}/VERSION"
+      path: "{data_dir}/VERSION"
