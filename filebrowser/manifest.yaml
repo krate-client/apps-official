@@ -8,7 +8,7 @@ install:
     install_dir: /opt/%i/filebrowser
     data_dir: /home/%i/.config/filebrowser
     backup_dir: /home/%i/.krate/backups/filebrowser
-    temp_dir: /home/%i/tmp/filebrowser
+    temp_dir: /home/%i/.tmp/filebrowser
   release:
     asset: linux-amd64-filebrowser.tar.gz
   executable:
@@ -21,10 +21,10 @@ systemd:
     Type: simple
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/filebrowser
+      TMPDIR: /home/%i/.tmp/filebrowser
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/filebrowser /home/%i/.config/filebrowser/logs
+      - /bin/mkdir -p /home/%i/.tmp/filebrowser /home/%i/.config/filebrowser/logs
     start:
       - /opt/%i/filebrowser/filebrowser
       - -d
@@ -46,7 +46,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/filebrowser
-      - /home/%i/tmp/filebrowser
+      - /home/%i/.tmp/filebrowser
       - /home/%i/.krate/backups/filebrowser
     read_only:
       - /opt/%i/filebrowser
