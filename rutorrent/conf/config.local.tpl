@@ -21,11 +21,11 @@ if ($krateRuUser !== '' && preg_match('/^[a-z_][a-z0-9_-]*$/i', $krateRuUser)) {
 	$forbidUserSettings = true;
 	$localHostedMode = true;
 
-	$topDirectory = '/home/' . $krateRuUser . '/download-clients/rtorrent/';
+	$topDirectory = '/home/' . $krateRuUser . '/medias/rtorrent/';
 	$profilePath = '/var/lib/krate/rutorrent/' . $krateRuUser;
 	$profileMask = 0770;
-	$tempDirectory = '/home/' . $krateRuUser . '/tmp/rtorrent/';
-	$krateLogsDir = '/home/' . $krateRuUser . '/download-clients/rtorrent/logs';
+	$tempDirectory = '/home/' . $krateRuUser . '/.tmp/rtorrent/';
+	$krateLogsDir = '/home/' . $krateRuUser . '/medias/rtorrent/logs';
 	$log_file = $krateLogsDir . '/rutorrent.log';
 
 	$rpcLogCalls = true;

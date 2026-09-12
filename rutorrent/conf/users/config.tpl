@@ -2,18 +2,18 @@
 // Per-user ruTorrent reference (KRATE). Runtime config is in /srv/rutorrent/app/conf/config.local.php
 // (forbidUserSettings — Novik does not load conf/users/{user}/config.php).
 
-$topDirectory = '/home/{{USERNAME}}/download-clients/rtorrent/';
+$topDirectory = '/home/{{USERNAME}}/medias/rtorrent/';
 
 $scgi_port = 0;
 $scgi_host = 'unix:///run/krate/user/{{USERNAME}}.rtorrent.sock';
 
 $XMLRPCMountPoint = '/RPC2';
 
-$log_file = '/home/{{USERNAME}}/download-clients/rtorrent/logs/rutorrent.log';
+$log_file = '/home/{{USERNAME}}/medias/rtorrent/logs/rutorrent.log';
 
 $profilePath = '/var/lib/krate/rutorrent/{{USERNAME}}';
 $profileMask = 0770;
-$tempDirectory = '/home/{{USERNAME}}/tmp/rtorrent/';
+$tempDirectory = '/home/{{USERNAME}}/.tmp/rtorrent/';
 
 $pathToExternals = array_merge(
 	is_array($pathToExternals ?? null) ? $pathToExternals : array(),

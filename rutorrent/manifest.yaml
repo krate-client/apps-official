@@ -10,7 +10,7 @@ sync_repos:
 #   /srv/rutorrent/app                    — shared app code (Novik clone; plugins via zen pull + HarmonyUI)
 #   /var/lib/krate/rutorrent/%i           — conf/, settings/ (+ tmp/, torrents/ symlinks)
 #   forbidUserSettings via config.local.php — no /users/%i/ suffix (Novik)
-#   Downloads (topDirectory)              — /home/%i/download-clients/rtorrent/
+#   Downloads (topDirectory)              — /home/%i/medias/rtorrent/
 dependencies:
   apt:
     common:
@@ -37,8 +37,8 @@ security:
       - /srv/rutorrent/app
       - /var/lib/krate/rutorrent/%i
       - /home/%i/.krate/backups/rutorrent
-      - /home/%i/download-clients/rtorrent
-      - /home/%i/tmp/rtorrent
+      - /home/%i/medias/rtorrent
+      - /home/%i/.tmp/rtorrent
       - /run/krate/user
     read_only:
       - /etc/caddy/auth/local/users.json
