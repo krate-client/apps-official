@@ -12,7 +12,7 @@ install:
     install_dir: /opt/%i/radarr
     data_dir: /home/%i/.config/radarr
     backup_dir: /home/%i/.krate/backups/radarr
-    temp_dir: /home/%i/tmp/radarr
+    temp_dir: /home/%i/.tmp/radarr
   executable:
     - /opt/%i/radarr/Radarr
   release:
@@ -26,7 +26,7 @@ systemd:
     Type: simple
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/radarr
+      TMPDIR: /home/%i/.tmp/radarr
     file:
       path: /home/%i/.krate/applications/radarr.env
       mode: "0600"
@@ -44,7 +44,7 @@ systemd:
         RADARR__APP__THEME: dark
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/radarr
+      - /bin/mkdir -p /home/%i/.tmp/radarr
     start:
       - /opt/%i/radarr/Radarr
       - -nobrowser
@@ -69,7 +69,7 @@ security:
     read_write:
       - /home/%i/.config/radarr
       - /home/%i/.krate/applications
-      - /home/%i/tmp/radarr
+      - /home/%i/.tmp/radarr
     read_only:
       - /opt/%i/radarr
 version:
