@@ -16,7 +16,7 @@ install:
     backup_dir: /home/%i/.krate/backups/wizarr
     data_dir: /home/%i/.config/wizarr
     install_dir: /opt/%i/wizarr
-    temp_dir: /home/%i/tmp/wizarr
+    temp_dir: /home/%i/.tmp/wizarr
   executable:
     - /usr/local/bin/pnpm
     - /opt/%i/wizarr/.venv/bin/gunicorn
@@ -29,7 +29,7 @@ systemd:
     WorkingDirectory: /opt/%i/wizarr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/wizarr
+      TMPDIR: /home/%i/.tmp/wizarr
       PYTHONUNBUFFERED: "1"
       FLASK_ENV: production
     file:
@@ -37,7 +37,7 @@ systemd:
       mode: "0600"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/wizarr /home/%i/.config/wizarr/database
+      - /bin/mkdir -p /home/%i/.tmp/wizarr /home/%i/.config/wizarr/database
     start:
       - /opt/%i/wizarr/.venv/bin/gunicorn
       - --umask
@@ -62,7 +62,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/wizarr
-      - /home/%i/tmp/wizarr
+      - /home/%i/.tmp/wizarr
       - /home/%i/.krate/backups/wizarr
       - /home/%i/.krate/applications
       - /home/%i/.local/share/pnpm
@@ -74,4 +74,4 @@ security:
 version:
   probes:
     - type: file
-      path: "{install_dir}/VERSION"
+      path: "{data_dir}/VERSION"
