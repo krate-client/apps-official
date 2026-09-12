@@ -12,7 +12,7 @@ install:
     backup_dir: /home/%i/.krate/backups/whisparr
     data_dir: /home/%i/.config/whisparr
     install_dir: /opt/%i/whisparr
-    temp_dir: /home/%i/tmp/whisparr
+    temp_dir: /home/%i/.tmp/whisparr
   release:
     asset: linux-x64.tar.gz
     branches:
@@ -26,7 +26,7 @@ systemd:
     Type: simple
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/whisparr
+      TMPDIR: /home/%i/.tmp/whisparr
     file:
       path: /home/%i/.krate/applications/whisparr.env
       mode: "0600"
@@ -43,7 +43,7 @@ systemd:
         WHISPARR__APP__THEME: dark
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/whisparr
+      - /bin/mkdir -p /home/%i/.tmp/whisparr
     start:
       - /opt/%i/whisparr/Whisparr
       - -nobrowser
@@ -67,7 +67,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/whisparr
-      - /home/%i/tmp/whisparr
+      - /home/%i/.tmp/whisparr
       - /home/%i/.krate/backups/whisparr
       - /home/%i/.krate/applications
     read_only:
