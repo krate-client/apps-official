@@ -12,7 +12,7 @@ install:
     backup_dir: /home/%i/.krate/backups/sonarr4k
     data_dir: /home/%i/.config/sonarr4k
     install_dir: /opt/%i/sonarr4k
-    temp_dir: /home/%i/tmp/sonarr4k
+    temp_dir: /home/%i/.tmp/sonarr4k
   release:
     asset: linux-x64.tar.gz
     branches:
@@ -26,7 +26,7 @@ systemd:
     Type: simple
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/sonarr4k
+      TMPDIR: /home/%i/.tmp/sonarr4k
     file:
       path: /home/%i/.krate/applications/sonarr4k.env
       mode: "0600"
@@ -44,7 +44,7 @@ systemd:
         SONARR__APP__THEME: dark
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/sonarr4k
+      - /bin/mkdir -p /home/%i/.tmp/sonarr4k
     start:
       - /opt/%i/sonarr4k/Sonarr
       - -nobrowser
@@ -68,7 +68,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/sonarr4k
-      - /home/%i/tmp/sonarr4k
+      - /home/%i/.tmp/sonarr4k
       - /home/%i/.krate/backups/sonarr4k
       - /home/%i/.krate/applications
     read_only:
