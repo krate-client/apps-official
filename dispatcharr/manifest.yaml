@@ -13,7 +13,7 @@ install:
     backup_dir: /home/%i/.krate/backups/dispatcharr
     data_dir: /home/%i/.config/dispatcharr
     install_dir: /opt/%i/dispatcharr
-    temp_dir: /home/%i/tmp/dispatcharr
+    temp_dir: /home/%i/.tmp/dispatcharr
   executable:
     - /opt/%i/dispatcharr/.venv/bin/uwsgi
     - /opt/%i/dispatcharr/.venv/bin/celery
@@ -31,7 +31,7 @@ systemd:
     BindPaths: /home/%i/.config/dispatcharr:/data
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/dispatcharr
+      TMPDIR: /home/%i/.tmp/dispatcharr
       PYTHONUNBUFFERED: "1"
       DISPATCHARR_ENV: aio
     file:
@@ -39,7 +39,7 @@ systemd:
       mode: "0600"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/dispatcharr /home/%i/.config/dispatcharr
+      - /bin/mkdir -p /home/%i/.tmp/dispatcharr /home/%i/.config/dispatcharr
     start:
       - /bin/bash
       - /opt/Krate/share/applications/official/dispatcharr/bin/krate-run.sh %i
@@ -59,7 +59,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/dispatcharr
-      - /home/%i/tmp/dispatcharr
+      - /home/%i/.tmp/dispatcharr
       - /home/%i/.krate/backups/dispatcharr
       - /home/%i/.krate/applications
       - /opt/%i/dispatcharr/.venv
