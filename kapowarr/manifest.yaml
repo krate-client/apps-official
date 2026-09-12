@@ -16,7 +16,7 @@ install:
     backup_dir: /home/%i/.krate/backups/kapowarr
     data_dir: /home/%i/.config/kapowarr
     install_dir: /opt/%i/kapowarr
-    temp_dir: /home/%i/tmp/kapowarr
+    temp_dir: /home/%i/.tmp/kapowarr
   executable:
     - /opt/%i/kapowarr/.venv/bin/python
 systemd:
@@ -29,14 +29,14 @@ systemd:
     WorkingDirectory: /opt/%i/kapowarr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/kapowarr
+      TMPDIR: /home/%i/.tmp/kapowarr
       PYTHONUNBUFFERED: "1"
     file:
       path: /home/%i/.krate/applications/kapowarr.env
       mode: "0600"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/kapowarr /home/%i/.config/kapowarr/db /home/%i/.config/kapowarr/logs /home/%i/.config/kapowarr/temp_downloads
+      - /bin/mkdir -p /home/%i/.tmp/kapowarr /home/%i/.config/kapowarr/db /home/%i/.config/kapowarr/logs /home/%i/.config/kapowarr/temp_downloads
     start:
       - /opt/%i/kapowarr/.venv/bin/python
       - /opt/%i/kapowarr/Kapowarr.py
@@ -67,7 +67,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/kapowarr
-      - /home/%i/tmp/kapowarr
+      - /home/%i/.tmp/kapowarr
       - /home/%i/.krate/backups/kapowarr
       - /home/%i/.krate/applications
       - /opt/%i/kapowarr/.venv
