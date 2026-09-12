@@ -17,7 +17,7 @@ install:
     backup_dir: /home/%i/.krate/backups/quasarr
     data_dir: /home/%i/.config/quasarr
     install_dir: /opt/%i/quasarr
-    temp_dir: /home/%i/tmp/quasarr
+    temp_dir: /home/%i/.tmp/quasarr
   executable:
     - /opt/%i/quasarr/.venv/bin/quasarr
 systemd:
@@ -29,7 +29,7 @@ systemd:
     WorkingDirectory: /opt/%i/quasarr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/quasarr
+      TMPDIR: /home/%i/.tmp/quasarr
       PYTHONUNBUFFERED: "1"
     file:
       path: /home/%i/.krate/applications/quasarr.env
@@ -40,7 +40,7 @@ systemd:
         QUASARR_URL_BASE: "{url_base}"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/quasarr /home/%i/.config/quasarr
+      - /bin/mkdir -p /home/%i/.tmp/quasarr /home/%i/.config/quasarr
     start:
       - /opt/%i/quasarr/.venv/bin/quasarr
 files:
@@ -59,7 +59,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/quasarr
-      - /home/%i/tmp/quasarr
+      - /home/%i/.tmp/quasarr
       - /home/%i/.krate/backups/quasarr
       - /home/%i/.krate/applications
       - /opt/%i/quasarr/.venv
