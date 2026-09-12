@@ -16,7 +16,7 @@ install:
   layout:
     install_dir: /opt/%i/byparr
     backup_dir: /home/%i/.krate/backups/byparr
-    temp_dir: /home/%i/tmp/byparr
+    temp_dir: /home/%i/.tmp/byparr
   executable:
     - /opt/%i/byparr/.venv/bin/python
 systemd:
@@ -29,7 +29,7 @@ systemd:
     WorkingDirectory: /opt/%i/byparr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/byparr
+      TMPDIR: /home/%i/.tmp/byparr
       HOME: /home/%i
       PYTHONUNBUFFERED: "1"
       PYTHONDONTWRITEBYTECODE: "1"
@@ -42,7 +42,7 @@ systemd:
         LOG_LEVEL: INFO
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/byparr /home/%i/.cache/camoufox /home/%i/.cache/ms-playwright /home/%i/.cache/uv /home/%i/.local/share/uv
+      - /bin/mkdir -p /home/%i/.tmp/byparr /home/%i/.cache/camoufox /home/%i/.cache/ms-playwright /home/%i/.cache/uv /home/%i/.local/share/uv
     start:
       - /opt/%i/byparr/.venv/bin/python
       - /opt/%i/byparr/main.py
@@ -59,7 +59,7 @@ security:
   filesystem:
     read_write:
       - /opt/%i/byparr/.venv
-      - /home/%i/tmp/byparr
+      - /home/%i/.tmp/byparr
       - /home/%i/.cache/camoufox
       - /home/%i/.cache/ms-playwright
       - /home/%i/.cache/uv
