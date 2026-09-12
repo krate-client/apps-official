@@ -15,12 +15,12 @@ install:
     data_dir: /home/%i/.config/nzbget
     backup_dir: /home/%i/.krate/backups/nzbget
     scripts_dir: /home/%i/.config/nzbget/scripts
-    downloads_dir: /home/%i/download-clients/nzbget/downloads
-    incomplete_dir: /home/%i/download-clients/nzbget/incomplete
-    logs_dir: /home/%i/download-clients/nzbget/logs
-    tmp_dir: /home/%i/download-clients/nzbget/tmp
-    pool_dir: /home/%i/download-clients/nzbget/pool
-    nzb_dir: /home/%i/download-clients/nzbget/nzb
+    downloads_dir: /home/%i/medias/nzbget/downloads
+    incomplete_dir: /home/%i/medias/nzbget/incomplete
+    logs_dir: /home/%i/medias/nzbget/logs
+    tmp_dir: /home/%i/medias/nzbget/tmp
+    pool_dir: /home/%i/medias/nzbget/pool
+    nzb_dir: /home/%i/medias/nzbget/nzb
   release:
     asset: amd64.deb
     branches:
@@ -71,7 +71,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/nzbget
-      - /home/%i/download-clients/nzbget
+      - /home/%i/medias/nzbget
       - /home/%i/.krate/backups/nzbget
     read_only:
       - /opt/%i/nzbget
