@@ -57,4 +57,4 @@ printf '\n=== journal (last start) ===\n'
 journalctl -u "rtorrent@${username}.service" -n 15 --no-pager 2>/dev/null || true
 
 printf '\n=== log tail ===\n'
-tail -20 "/home/${username}/download-clients/rtorrent/logs/rtorrent.log" 2>/dev/null || true
+tail -20 "/home/${username}/medias/rtorrent/logs/rtorrent.log" 2>/dev/null || true

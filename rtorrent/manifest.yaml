@@ -12,16 +12,16 @@ install:
     install_dir: /opt/%i/rtorrent
     backup_dir: /home/%i/.krate/backups/rtorrent
     config_dir: /home/%i/.config/rtorrent
-    data_dir: /home/%i/download-clients/rtorrent
-    downloads_dir: /home/%i/download-clients/rtorrent/downloads
-    torrents_dir: /home/%i/download-clients/rtorrent/torrents
-    incomplete_dir: /home/%i/download-clients/rtorrent/incomplete
-    logs_dir: /home/%i/download-clients/rtorrent/logs
-    session_dir: /home/%i/download-clients/rtorrent/.sessions
-    watch_dir: /home/%i/download-clients/rtorrent/.watch
-    watch_load_dir: /home/%i/download-clients/rtorrent/.watch/load
-    watch_start_dir: /home/%i/download-clients/rtorrent/.watch/start
-    temp_dir: /home/%i/tmp/rtorrent
+    data_dir: /home/%i/medias/rtorrent
+    downloads_dir: /home/%i/medias/rtorrent/downloads
+    torrents_dir: /home/%i/medias/rtorrent/torrents
+    incomplete_dir: /home/%i/medias/rtorrent/incomplete
+    logs_dir: /home/%i/medias/rtorrent/logs
+    session_dir: /home/%i/medias/rtorrent/.sessions
+    watch_dir: /home/%i/medias/rtorrent/.watch
+    watch_load_dir: /home/%i/medias/rtorrent/.watch/load
+    watch_start_dir: /home/%i/medias/rtorrent/.watch/start
+    temp_dir: /home/%i/.tmp/rtorrent
   executable:
     - /home/%i/.krate/active/rtorrent/usr/bin/rtorrent
 systemd:
@@ -76,9 +76,9 @@ security:
   network: true
   filesystem:
     read_write:
-      - /home/%i/download-clients/rtorrent
+      - /home/%i/medias/rtorrent
       - /home/%i/.krate/backups/rtorrent
-      - /home/%i/tmp/rtorrent
+      - /home/%i/.tmp/rtorrent
       - /home/%i/.config/rtorrent
       - /run/krate/user
       - /var/run/%i

@@ -29,5 +29,5 @@ fi
 /usr/bin/tmux kill-session -t "rtorrent-${user}" 2>/dev/null || true
 pkill -u "${user}" -x rtorrent 2>/dev/null || true
 rm -f \
-	"/home/${user}/download-clients/rtorrent/.sessions/rtorrent.lock" \
+	"/home/${user}/medias/rtorrent/.sessions/rtorrent.lock" \
 	"${rt_dir}/${user}.rtorrent.sock"
