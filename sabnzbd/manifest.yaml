@@ -16,9 +16,9 @@ install:
     backup_dir: /home/%i/.krate/backups/sabnzbd
     admin_dir: /home/%i/.config/sabnzbd/admin
     config_backup_dir: /home/%i/.config/sabnzbd/backup
-    downloads_dir: /home/%i/download-clients/sabnzbd/downloads
-    incomplete_dir: /home/%i/download-clients/sabnzbd/incomplete
-    logs_dir: /home/%i/download-clients/sabnzbd/logs
+    downloads_dir: /home/%i/medias/sabnzbd/downloads
+    incomplete_dir: /home/%i/medias/sabnzbd/incomplete
+    logs_dir: /home/%i/medias/sabnzbd/logs
   release:
     asset: src.tar.gz
   executable:
@@ -59,7 +59,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/sabnzbd
-      - /home/%i/download-clients/sabnzbd
+      - /home/%i/medias/sabnzbd
       - /home/%i/.krate/backups/sabnzbd
       - /opt/%i/sabnzbd
     read_only:
