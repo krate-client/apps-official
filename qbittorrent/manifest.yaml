@@ -12,10 +12,10 @@ install:
     install_dir: /opt/%i/qbittorrent
     backup_dir: /home/%i/.krate/backups/qbittorrent
     config_dir: /home/%i/.config/qBittorrent
-    data_dir: /home/%i/download-clients/qbittorrent
-    downloads_dir: /home/%i/download-clients/qbittorrent/downloads
-    incomplete_dir: /home/%i/download-clients/qbittorrent/incomplete
-    logs_dir: /home/%i/download-clients/qbittorrent/logs
+    data_dir: /home/%i/medias/qbittorrent
+    downloads_dir: /home/%i/medias/qbittorrent/downloads
+    incomplete_dir: /home/%i/medias/qbittorrent/incomplete
+    logs_dir: /home/%i/medias/qbittorrent/logs
   executable:
     - /home/%i/.krate/active/qbittorrent-nox/usr/bin/qbittorrent-nox
 systemd:
@@ -53,7 +53,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/qBittorrent
-      - /home/%i/download-clients/qbittorrent
+      - /home/%i/medias/qbittorrent
       - /home/%i/.krate/backups/qbittorrent
       - /home/%i/.krate/applications
     read_only:
