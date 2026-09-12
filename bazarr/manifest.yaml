@@ -12,7 +12,7 @@ install:
     backup_dir: /home/%i/.krate/backups/bazarr
     data_dir: /home/%i/.config/bazarr
     install_dir: /opt/%i/bazarr
-    temp_dir: /home/%i/tmp/bazarr
+    temp_dir: /home/%i/.tmp/bazarr
   release:
     asset: bazarr.zip
   executable:
@@ -28,10 +28,10 @@ systemd:
     WorkingDirectory: /opt/%i/bazarr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/bazarr
+      TMPDIR: /home/%i/.tmp/bazarr
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/bazarr /home/%i/.config/bazarr/config /home/%i/.config/bazarr/db /home/%i/.config/bazarr/log
+      - /bin/mkdir -p /home/%i/.tmp/bazarr /home/%i/.config/bazarr/config /home/%i/.config/bazarr/db /home/%i/.config/bazarr/log
     start:
       - /opt/%i/bazarr/.venv/bin/python
       - /opt/%i/bazarr/bazarr.py
@@ -56,7 +56,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/bazarr
-      - /home/%i/tmp/bazarr
+      - /home/%i/.tmp/bazarr
       - /home/%i/.krate/backups/bazarr
     read_only:
       - /opt/%i/bazarr
