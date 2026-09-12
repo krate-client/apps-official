@@ -12,7 +12,7 @@ install:
     install_dir: /opt/%i/jellyfin
     data_dir: /home/%i/.config/jellyfin
     backup_dir: /home/%i/.krate/backups/jellyfin
-    temp_dir: /home/%i/tmp/jellyfin
+    temp_dir: /home/%i/.tmp/jellyfin
   release:
     asset: amd64.tar.gz
     base: https://repo.jellyfin.org/files/server/linux/latest-{channel}/amd64/
@@ -35,10 +35,10 @@ systemd:
     WorkingDirectory: /opt/%i/jellyfin
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/jellyfin
+      TMPDIR: /home/%i/.tmp/jellyfin
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/jellyfin /home/%i/.config/jellyfin/config
+      - /bin/mkdir -p /home/%i/.tmp/jellyfin /home/%i/.config/jellyfin/config
     start:
       - /opt/%i/jellyfin/jellyfin
       - --datadir
@@ -65,7 +65,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/jellyfin
-      - /home/%i/tmp/jellyfin
+      - /home/%i/.tmp/jellyfin
       - /home/%i/.krate/backups/jellyfin
     read_only:
       - /opt/%i/jellyfin

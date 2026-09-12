@@ -12,8 +12,6 @@ handle @app_route_{{ROUTE_TAG}}_ws {
 		}
 		header_up Host {host}
 		header_up X-Real-IP {remote_host}
-		header_up X-Forwarded-Proto {scheme}
-		header_up X-Forwarded-Host {host}
 	}
 }
 # Jellyfin subpath: match base, base/, and base/* (reverse_proxy /base/* alone misses /base/).
@@ -30,8 +28,6 @@ route @app_route_{{ROUTE_TAG}} {
 		flush_interval -1
 		header_up Host {host}
 		header_up X-Real-IP {remote_host}
-		header_up X-Forwarded-Proto {scheme}
-		header_up X-Forwarded-Host {host}
 		header_up X-Forwarded-Prefix {{BASE}}
 		header_up -Accept-Encoding
 		header_down -x-webkit-csp
