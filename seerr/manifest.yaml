@@ -16,7 +16,7 @@ install:
     backup_dir: /home/%i/.krate/backups/seerr
     data_dir: /home/%i/.config/seerr
     install_dir: /opt/%i/seerr
-    temp_dir: /home/%i/tmp/seerr
+    temp_dir: /home/%i/.tmp/seerr
   executable:
     - /usr/local/bin/pnpm
 systemd:
@@ -28,7 +28,7 @@ systemd:
     WorkingDirectory: /opt/%i/seerr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/seerr
+      TMPDIR: /home/%i/.tmp/seerr
       NODE_ENV: production
       CYPRESS_INSTALL_BINARY: "0"
       PNPM_HOME: /home/%i/.local/share/pnpm
@@ -38,7 +38,7 @@ systemd:
       mode: "0600"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/seerr /home/%i/.local/share/pnpm /home/%i/.config/seerr/config/db /home/%i/.config/seerr/config/logs
+      - /bin/mkdir -p /home/%i/.tmp/seerr /home/%i/.local/share/pnpm /home/%i/.config/seerr/config/db /home/%i/.config/seerr/config/logs
     start:
       - /usr/local/bin/pnpm
       - exec
@@ -61,7 +61,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/seerr
-      - /home/%i/tmp/seerr
+      - /home/%i/.tmp/seerr
       - /home/%i/.krate/backups/seerr
       - /home/%i/.krate/applications
       - /home/%i/.local/share/pnpm
