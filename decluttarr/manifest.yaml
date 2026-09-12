@@ -16,7 +16,7 @@ install:
     backup_dir: /home/%i/.krate/backups/decluttarr
     data_dir: /home/%i/.config/decluttarr
     install_dir: /opt/%i/decluttarr
-    temp_dir: /home/%i/tmp/decluttarr
+    temp_dir: /home/%i/.tmp/decluttarr
   executable:
     - /opt/%i/decluttarr/.venv/bin/python
 systemd:
@@ -28,11 +28,11 @@ systemd:
     WorkingDirectory: /opt/%i/decluttarr
   environment:
     inline:
-      TMPDIR: /home/%i/tmp/decluttarr
+      TMPDIR: /home/%i/.tmp/decluttarr
       PYTHONUNBUFFERED: "1"
   exec:
     pre:
-      - /bin/mkdir -p /home/%i/tmp/decluttarr /home/%i/.config/decluttarr/config
+      - /bin/mkdir -p /home/%i/.tmp/decluttarr /home/%i/.config/decluttarr/config
     start:
       - /opt/%i/decluttarr/.venv/bin/python
       - /opt/%i/decluttarr/main.py
@@ -46,7 +46,7 @@ security:
   filesystem:
     read_write:
       - /home/%i/.config/decluttarr
-      - /home/%i/tmp/decluttarr
+      - /home/%i/.tmp/decluttarr
       - /home/%i/.krate/backups/decluttarr
       - /opt/%i/decluttarr/.venv
     read_only:
