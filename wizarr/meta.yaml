@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/wizarrrr/wizarr#readme
   source: https://github.com/wizarrrr/wizarr
   krate_docs: https://krate.github.io/docs/software/official/wizarr
-tier: free
+tier: pro
 category: management
 install_mode: local
 password_constraints:
