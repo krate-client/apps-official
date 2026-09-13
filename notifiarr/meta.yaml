@@ -6,7 +6,7 @@ links:
   documentation: https://notifiarr.wiki/
   source: https://github.com/Notifiarr/notifiarr
   krate_docs: https://krate.github.io/docs/software/official/notifiarr
-tier: free
+tier: pro
 category: monitoring
 install_mode: local
 password_constraints:
