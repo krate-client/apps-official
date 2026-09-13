@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/Tautulli/Tautulli/wiki
   source: https://github.com/Tautulli/Tautulli
   krate_docs: https://krate.github.io/docs/software/official/tautulli
-tier: free
+tier: pro
 category: monitoring
 install_mode: local
 password_constraints:
