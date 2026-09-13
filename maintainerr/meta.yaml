@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/Maintainerr/Maintainerr#readme
   source: https://github.com/Maintainerr/Maintainerr
   krate_docs: https://krate.github.io/docs/software/official/maintainerr
-tier: free
+tier: pro
 category: automation
 install_mode: local
 autocomplete_options:
