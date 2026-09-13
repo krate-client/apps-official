@@ -6,7 +6,7 @@ links:
   documentation: https://wiki.bazarr.media/
   source: https://github.com/morpheus65535/bazarr
   krate_docs: https://krate.github.io/docs/software/official/bazarr4k
-tier: free
+tier: pro
 category: media
 install_mode: local
 password_constraints:
