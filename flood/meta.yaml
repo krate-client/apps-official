@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/jesec/flood/wiki
   source: https://github.com/jesec/flood
   krate_docs: https://krate.github.io/docs/software/community/flood
-tier: free
+tier: pro
 category: download
 install_mode: local
 password_constraints:
