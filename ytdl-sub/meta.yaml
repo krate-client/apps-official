@@ -6,7 +6,7 @@ links:
   documentation: https://ytdl-sub.readthedocs.io/en/latest/
   source: https://github.com/jmbannon/ytdl-sub
   krate_docs: https://krate.github.io/docs/software/official/ytdl-sub
-tier: free
+tier: pro
 category: download
 install_mode: local
 autocomplete_options:
