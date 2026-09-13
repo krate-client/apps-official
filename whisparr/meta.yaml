@@ -6,7 +6,7 @@ links:
   documentation: https://wiki.servarr.com/Whisparr
   source: https://github.com/Whisparr/Whisparr
   krate_docs: https://krate.github.io/docs/software/official/whisparr
-tier: free
+tier: pro
 category: media
 install_mode: local
 password_constraints:
