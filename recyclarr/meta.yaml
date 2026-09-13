@@ -6,7 +6,7 @@ links:
   documentation: https://recyclarr.dev/
   source: https://github.com/recyclarr/recyclarr
   krate_docs: https://krate.github.io/docs/software/official/recyclarr
-tier: free
+tier: pro
 category: automation
 install_mode: local
 autocomplete_options:
