@@ -6,7 +6,7 @@ links:
   documentation: https://www.navidrome.org/docs/
   source: https://github.com/navidrome/navidrome
   krate_docs: https://krate.github.io/docs/software/official/navidrome
-tier: free
+tier: pro
 category: streaming
 install_mode: local
 autocomplete_options:
