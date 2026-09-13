@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/ManiMatter/decluttarr#readme
   source: https://github.com/ManiMatter/decluttarr
   krate_docs: https://krate.github.io/docs/software/official/decluttarr
-tier: free
+tier: pro
 category: automation
 install_mode: local
 autocomplete_options:
