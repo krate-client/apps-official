@@ -6,7 +6,7 @@ links:
   documentation: https://nzbget.com/documentation/
   source: https://github.com/nzbgetcom/nzbget
   krate_docs: https://krate.github.io/docs/software/official/nzbget
-tier: free
+tier: pro
 category: download
 install_mode: local
 password_constraints:
