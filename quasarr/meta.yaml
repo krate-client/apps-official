@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/rix1337/Quasarr#readme
   source: https://github.com/rix1337/Quasarr
   krate_docs: https://krate.github.io/docs/software/official/quasarr
-tier: free
+tier: pro
 category: automation
 install_mode: local
 password_constraints:
