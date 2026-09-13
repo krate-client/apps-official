@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/nandyalu/trailarr#readme
   source: https://github.com/nandyalu/trailarr
   krate_docs: https://krate.github.io/docs/software/official/trailarr
-tier: free
+tier: pro
 category: automation
 install_mode: local
 password_constraints:
