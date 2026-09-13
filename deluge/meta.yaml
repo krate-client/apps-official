@@ -6,7 +6,7 @@ links:
   documentation: https://dev.deluge-torrent.org/wiki/UserGuide
   source: https://github.com/deluge-torrent/deluge
   krate_docs: https://krate.github.io/docs/software/community/deluge
-tier: free
+tier: pro
 category: download
 install_mode: local
 ui_options:
