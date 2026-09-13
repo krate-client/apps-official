@@ -7,7 +7,7 @@ links:
   documentation: https://emby.media/support/articles/Quick-Start.html
   source: https://github.com/MediaBrowser/Emby.Releases
   krate_docs: https://krate.github.io/docs/software/community/emby
-tier: free
+tier: pro
 category: streaming
 install_mode: local
 password_constraints:
