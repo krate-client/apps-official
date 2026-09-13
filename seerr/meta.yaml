@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/seerr-team/seerr#readme
   source: https://github.com/seerr-team/seerr
   krate_docs: https://krate.github.io/docs/software/official/seerr
-tier: free
+tier: pro
 category: workflow
 install_mode: local
 autocomplete_options:
