@@ -17,8 +17,7 @@ if [ -f "${tmpfiles}" ]; then
 fi
 
 install -d -m 2770 -o root -g krate "${rt_dir}"
-chown root:krate "${rt_dir}"
-chmod 2770 "${rt_dir}"
+# install -d already sets ownership/mode; re-check below.
 
 actual="$(stat -c '%U:%G %a' "${rt_dir}")"
 if [ "${actual}" != "root:krate 2770" ]; then
