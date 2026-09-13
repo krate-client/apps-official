@@ -6,7 +6,7 @@ links:
   documentation: https://github.com/Cleanuparr/Cleanuparr#readme
   source: https://github.com/Cleanuparr/Cleanuparr
   krate_docs: https://krate.github.io/docs/software/official/cleanuparr
-tier: free
+tier: pro
 category: automation
 install_mode: local
 autocomplete_options:
